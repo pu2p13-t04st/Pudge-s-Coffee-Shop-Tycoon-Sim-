@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cbsk54kr8d1s1"]
+
+[ext_resource type="Script" uid="uid://bpxdbjut8eibb" path="res://scripts/scenes/store_listing_template.gd" id="1_f2kfl"]
+
+[node name="StoreListingControl" type="Control" unique_id=1223339498]
+custom_minimum_size = Vector2(480, 240)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 240.0
+script = ExtResource("1_f2kfl")
+
+[node name="StoreListingPanelContainer" type="PanelContainer" parent="." unique_id=1192570191]
+custom_minimum_size = Vector2(480, 240)
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 240.0
+
+[node name="StoreListingVBoxContainer" type="VBoxContainer" parent="StoreListingPanelContainer" unique_id=367109584]
+layout_mode = 2
+
+[node name="AddressRichTextLabel" type="RichTextLabel" parent="StoreListingPanelContainer/StoreListingVBoxContainer" unique_id=1594997899]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 32
+text = "Address"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AddressHSeparator" type="HSeparator" parent="StoreListingPanelContainer/StoreListingVBoxContainer" unique_id=211844649]
+layout_mode = 2
+
+[node name="FootTrafficAndProfitHBoxContainer" type="HBoxContainer" parent="StoreListingPanelContainer/StoreListingVBoxContainer" unique_id=1311784472]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FootTrafficRichTextLabel" type="RichTextLabel" parent="StoreListingPanelContainer/StoreListingVBoxContainer/FootTrafficAndProfitHBoxContainer" unique_id=993487079]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Foot Traffic: 10,000"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ProfitRichTextLabel" type="RichTextLabel" parent="StoreListingPanelContainer/StoreListingVBoxContainer/FootTrafficAndProfitHBoxContainer" unique_id=1567478959]
+layout_mode = 2
+size_flags_horizontal = 3
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuildCostAndButtonHBoxContainer" type="HBoxContainer" parent="StoreListingPanelContainer/StoreListingVBoxContainer" unique_id=1234520534]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BuildCostRichTextLabel" type="RichTextLabel" parent="StoreListingPanelContainer/StoreListingVBoxContainer/BuildCostAndButtonHBoxContainer" unique_id=1653661030]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Foot Traffic: 10,000"
+fit_content = true
+autowrap_mode = 0
+
+[node name="BuildStoreButton" type="Button" parent="StoreListingPanelContainer/StoreListingVBoxContainer/BuildCostAndButtonHBoxContainer" unique_id=1718110308]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Build Store"
+
+[node name="StoreListingHSeparator" type="HSeparator" parent="StoreListingPanelContainer/StoreListingVBoxContainer" unique_id=475920664]
+layout_mode = 2
+
+[connection signal="pressed" from="StoreListingPanelContainer/StoreListingVBoxContainer/BuildCostAndButtonHBoxContainer/BuildStoreButton" to="." method="_on_build_store_button_pressed"]

@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://ce7utnpg3uw8q"]
+
+[ext_resource type="Script" uid="uid://b51oypx85joff" path="res://scripts/scenes/base.gd" id="1_pvqg0"]
+
+[node name="BaseNode" type="Node" unique_id=1845473916 node_paths=PackedStringArray("title_screen_placeholder", "screen_section_one", "screen_section_two", "screen_section_three")]
+script = ExtResource("1_pvqg0")
+title_screen_placeholder = NodePath("TitleScreenPlaceholderControl")
+screen_section_one = NodePath("ScreenSectionOneControl")
+screen_section_two = NodePath("ScreenSectionTwoControl")
+screen_section_three = NodePath("ScreenSectionThreeControl")
+
+[node name="BackgroundPanelContainer" type="Panel" parent="." unique_id=45305283]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleScreenPlaceholderControl" type="Control" parent="." unique_id=1322362004]
+visible = false
+custom_minimum_size = Vector2(1088, 584)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScreenSectionOneControl" type="Control" parent="." unique_id=1384105857]
+visible = false
+custom_minimum_size = Vector2(330, 584)
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = -292.0
+offset_right = 362.0
+offset_bottom = 292.0
+grow_vertical = 2
+
+[node name="ScreenSectionTwoControl" type="Control" parent="." unique_id=578226902]
+visible = false
+custom_minimum_size = Vector2(528, 584)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -292.0
+offset_right = 330.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScreenSectionThreeControl" type="Control" parent="." unique_id=157483109]
+visible = false
+custom_minimum_size = Vector2(198, 584)
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -292.0
+offset_right = -32.0
+offset_bottom = 292.0
+grow_horizontal = 0
+grow_vertical = 2

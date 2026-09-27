@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cpp3vo45u175j"]
+
+[ext_resource type="Script" uid="uid://cshjisdvesg1o" path="res://scripts/scenes/available_stores_screen.gd" id="1_ron3w"]
+[ext_resource type="Script" uid="uid://bcgqi1sqpou3w" path="res://scripts/classes/scripts/store_class.gd" id="2_2q31k"]
+[ext_resource type="Resource" uid="uid://445myv23w5rw" path="res://scripts/classes/resources/stores/level_zero.tres" id="3_awyj0"]
+[ext_resource type="Resource" uid="uid://b4vjkd38l8dvf" path="res://scripts/classes/resources/stores/level_one.tres" id="4_xrt6q"]
+[ext_resource type="Resource" uid="uid://b3o40w8y0ur4y" path="res://scripts/classes/resources/stores/level_two.tres" id="5_hwkki"]
+
+[node name="AvailableStoresScreenControl" type="Control" unique_id=270070428]
+custom_minimum_size = Vector2(528, 584)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 528.0
+offset_bottom = 584.0
+script = ExtResource("1_ron3w")
+stores = Array[ExtResource("2_2q31k")]([ExtResource("3_awyj0"), ExtResource("4_xrt6q"), ExtResource("5_hwkki")])
+
+[node name="AvailableStoresScreenPanelContainer" type="PanelContainer" parent="." unique_id=1762926311]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AvailableStoresScreenVBoxContainer" type="VBoxContainer" parent="AvailableStoresScreenPanelContainer" unique_id=1191573506]
+layout_mode = 2
+
+[node name="AvailableStoresRichTextLabel" type="RichTextLabel" parent="AvailableStoresScreenPanelContainer/AvailableStoresScreenVBoxContainer" unique_id=762497072]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Available
+Stores:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StoreListingsHSeparator" type="HSeparator" parent="AvailableStoresScreenPanelContainer/AvailableStoresScreenVBoxContainer" unique_id=1227443053]
+layout_mode = 2
+
+[node name="StoreListingsScrollContainer" type="ScrollContainer" parent="AvailableStoresScreenPanelContainer/AvailableStoresScreenVBoxContainer" unique_id=1177730179]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StoreListingsVBoxContainer" type="VBoxContainer" parent="AvailableStoresScreenPanelContainer/AvailableStoresScreenVBoxContainer/StoreListingsScrollContainer" unique_id=1920714655]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

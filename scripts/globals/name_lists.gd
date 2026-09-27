@@ -1,0 +1,3 @@
+extends Node
+
+@export var street_names : PackedStringArray = ["Oak St.", "Willow St.", "Ash St.", "Beach St.", "Elm St.", "Regent St.",  "1st St.", "2nd St.", "3rd St.", "4th St.", "5th St.", "6th St.", "7th St.", "8th St.", "9th St.", "10th St.", "Main St.", "Electra St.", "Old Halvaughn St.", "Lela St.", "Townline Rd.", "Stateline Rd.", "Old Shell Rd.", "Old Foss Rd.", "Edgewood Rd.", "Pioneer Rd.", "Woodland Dr.", "Allee Dr.", "Bonita Dr.", "Timber Creek Dr.", "Lynnwood Dr.", "Spurlin Dr.", "Red Wheat Dr.", "Orange Ave.",  "Amber Ave.", "Elmwood Ave.", "Hartronft Ave.", "Lee Ave.", "Busby Ave.", "Scheidel Ave.", "Sheb Wooley Ave.", "Wyandotte Ave.", "Bivins Ave.", "Blackmore Ln.", "Ellis Ln.", "Liberty Ln.", "Mulberry Ln."]
