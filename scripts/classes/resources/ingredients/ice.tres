@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://cscobhf7vjjrl"]
-
-[ext_resource type="Script" uid="uid://b2k0tq8lpucvr" path="res://scripts/classes/scripts/ingredient_class.gd" id="1_dwtdg"]
-
-[resource]
-script = ExtResource("1_dwtdg")
-name = "Ice"
-cost_per_part = 0.25
-metadata/_custom_type_script = "uid://b2k0tq8lpucvr"
