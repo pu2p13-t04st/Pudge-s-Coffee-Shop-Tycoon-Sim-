@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://dn7jpa3aybsi6"]
+
+[ext_resource type="Script" uid="uid://b2k0tq8lpucvr" path="res://scripts/classes/scripts/ingredient_class.gd" id="1_tq1bm"]
+[ext_resource type="Script" uid="uid://17etocpfccv0" path="res://scripts/classes/scripts/product_class.gd" id="2_pa52g"]
+[ext_resource type="Resource" uid="uid://cg5jmcf4adm4p" path="res://scripts/classes/resources/ingredients/drip_coffee.tres" id="2_vurjh"]
+
+[resource]
+script = ExtResource("2_pa52g")
+name = "Black Coffee"
+temp = "Hot"
+ingredients = Array[ExtResource("1_tq1bm")]([ExtResource("2_vurjh"), ExtResource("2_vurjh"), ExtResource("2_vurjh"), ExtResource("2_vurjh")])
+metadata/_custom_type_script = "uid://17etocpfccv0"

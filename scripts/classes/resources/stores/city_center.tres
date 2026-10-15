@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Store" format=3 uid="uid://b0is3bk11dkbr"]
+
+[ext_resource type="Script" uid="uid://17etocpfccv0" path="res://scripts/classes/scripts/product_class.gd" id="1_svesf"]
+[ext_resource type="Resource" uid="uid://dot46upehvb1o" path="res://scripts/classes/resources/products/espresso/shots/double_shot_hot.tres" id="2_pvpds"]
+[ext_resource type="Resource" uid="uid://ba3ywxyr51x16" path="res://scripts/classes/resources/products/espresso/shots/double_shot_iced.tres" id="3_7fw8c"]
+[ext_resource type="Resource" uid="uid://bs7l7qigsm454" path="res://scripts/classes/resources/products/espresso/shots/triple_shot_hot.tres" id="4_ueuud"]
+[ext_resource type="Resource" uid="uid://3pc1aeo20oj5" path="res://scripts/classes/resources/products/espresso/shots/triple_shot_iced.tres" id="5_w7fl0"]
+[ext_resource type="Resource" uid="uid://dn7jpa3aybsi6" path="res://scripts/classes/resources/products/drip_coffee/black/drip_black_hot.tres" id="6_fgp4l"]
+[ext_resource type="Resource" uid="uid://yn1pww7cqe8u" path="res://scripts/classes/resources/products/drip_coffee/black/drip_black_iced.tres" id="7_ujlha"]
+[ext_resource type="Resource" uid="uid://dcr6nuimb7wpv" path="res://scripts/classes/resources/products/drip_coffee/cream_and_sugar/drip_cream_and_sugar_hot.tres" id="8_vywt6"]
+[ext_resource type="Resource" uid="uid://ftf8agi8lut8" path="res://scripts/classes/resources/products/drip_coffee/cream_and_sugar/drip_cream_and_sugar_iced.tres" id="9_guavb"]
+[ext_resource type="Resource" uid="uid://bquywsit75h58" path="res://scripts/classes/resources/products/espresso/lattes/espresso_latte_hot.tres" id="10_qnxg1"]
+[ext_resource type="Resource" uid="uid://djy2dsx1f6338" path="res://scripts/classes/resources/products/espresso/lattes/espresso_latte_iced.tres" id="11_o0tka"]
+[ext_resource type="Script" uid="uid://bcgqi1sqpou3w" path="res://scripts/classes/scripts/store_class.gd" id="12_3ncpo"]
+
+[resource]
+script = ExtResource("12_3ncpo")
+distance = 100
+products = Array[ExtResource("1_svesf")]([ExtResource("2_pvpds"), ExtResource("3_7fw8c"), ExtResource("4_ueuud"), ExtResource("5_w7fl0"), ExtResource("6_fgp4l"), ExtResource("7_ujlha"), ExtResource("8_vywt6"), ExtResource("9_guavb"), ExtResource("10_qnxg1"), ExtResource("11_o0tka")])
+metadata/_custom_type_script = "uid://bcgqi1sqpou3w"

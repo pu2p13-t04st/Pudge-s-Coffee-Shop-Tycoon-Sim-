@@ -1,47 +1,95 @@
-extends Resource
-
 class_name Store
+extends Resource
+## Defines Store Class
 
+
+@export_category("Location")
 @export var address : String
-@export var street_number : int
 @export var foot_traffic : int
-@export var build_cost : float
-@export var profit : float
-@export var store_level : int
+@export_enum ( 
+	"City Center:100",
+	"Second Block:200",
+	"Third Block:300",
+	"Fourth Block:400",
+	"Suburbs:500",
+	"SuburbanRural:600",
+	"Rural:700",
+	"Boons:800",
+	) var distance : int
+@export_enum (
+	"Famous:300",
+	"Popular:200",
+	"Local Favorite:100",
+	"Unknown:0",
+	"Disliked:-100",
+	"Hated:-200",
+	) var popularity : int
 
-#This set of functions create randomized variables deterimined by the "store level" 
-#this store level is set when I make a new store resource
-func create_address(level : int) -> String:
-	var range_start = 0 if level == 0 else level * 10
-	var range_end = range_start + 10
+@export_category("Money")
+@export var build_cost : float 
+@export var weekly_revenue : float
+@export var weekly_expenses : float
+@export var weekly_profit : float
+
+@export_category("Management")
+@export var products : Array[Product]
+@export var store_manager : StoreManager
+
+
+var street_number : int
+var product_sale_price_total : float = 0
+var product_expense_total : float = 0
+var distance_multiplier : float
+var product_multiplier : float
+var popularity_multiplier : float
+
+
+func set_products(): 
+	for product in products:
+		product.set_variables()
+		product_sale_price_total += product.selling_price
+		product_expense_total += product.expenses
+
+
+func set_address():
 	@warning_ignore("integer_division")
-	street_number = int(str(range_start/10) + str(range_end)) + randi_range(100, 175)
-	address = str(street_number) + " " + NameLists.street_names[randi_range(range_start, range_end)]
-	return address
+	var range_start : int = (distance / 10) - 11 if (distance / 10) - 11 >= 0 else 0
+	var range_end : int = range_start + 10 if range_start + 10 <= 49 else 49
+	var random_name : int = randi_range(range_start, range_end)
+	street_number = distance + randi_range(0, 99)
+	address = str(street_number) + " " + Lists.street_names.get(random_name)
+	return street_number
 
-func create_foot_traffic(level : int) -> int:
-	var range_start = 10000 if level == 0 else 10000 - (level * 1000)
-	var range_end = 12000 if level == 0 else 12000 - (level * 1000)
-	foot_traffic = randi_range(range_start, range_end)
-	return foot_traffic
 
-func create_build_cost(level : int) -> float:
-	var range_start = 40000 if level == 0 else 40000 - (level * 10000)
-	var range_end = 50000 if level == 0 else 50000 - (level * 10000)
-	build_cost = randf_range(range_start, range_end)
-	return build_cost
+func set_foot_traffic():
+	distance_multiplier = 10000 / float(street_number)
+	product_multiplier = float(products.size()) / 50
+	popularity_multiplier = (1000 * (distance_multiplier * product_multiplier)) * (popularity * 0.001)
+	@warning_ignore("narrowing_conversion")
+	foot_traffic = (1000 * (distance_multiplier * product_multiplier)) + popularity_multiplier
 
-func create_profit(level : int):
-	@warning_ignore("integer_division", "incompatible_ternary")
-	var range_start = foot_traffic / 10 if level == 0 else foot_traffic / (10 * (level + randf_range(0.1, 0.5)))
-	var range_end =  build_cost / 10 if level == 0 else build_cost / (10 * (level + randf_range(0.1, 0.5)))
-	profit = randf_range(range_start, range_end) * 7
-	return profit
 
-#Just calls all previous scripts at once so I can keep them separated in case I only need to call one function and also
-#makes it so I don't have to write out all of them
-func create_variables():
-	create_address(store_level)
-	create_foot_traffic(store_level)
-	create_build_cost(store_level)
-	create_profit(store_level)
+func set_revenue():
+	weekly_revenue = (product_sale_price_total * (foot_traffic * (9 * 7))) / 1000
+
+
+func set_expenses():
+	weekly_expenses = (product_expense_total * (foot_traffic * (9 * 7))) / 1000
+
+
+func set_profit():
+	weekly_profit = weekly_revenue - weekly_expenses
+
+
+func set_build_cost():
+	build_cost = (foot_traffic * 0.25) + (weekly_expenses * 2)
+
+
+func set_variables(): 
+	set_products()
+	set_address()
+	set_foot_traffic()
+	set_revenue()
+	set_expenses()
+	set_profit()
+	set_build_cost()
