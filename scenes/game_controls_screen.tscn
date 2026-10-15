@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b5rt135mb87ap"]
+
+[ext_resource type="Script" uid="uid://dy7k8soshwovk" path="res://scripts/scenes/game_controls_screen.gd" id="1_8dcy0"]
+
+[node name="GameControlsScreenControl" type="Control" unique_id=304682035]
+custom_minimum_size = Vector2(198, 584)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 198.0
+offset_bottom = 584.0
+script = ExtResource("1_8dcy0")
+
+[node name="GameControlsScreenPanelContainer" type="PanelContainer" parent="." unique_id=1772264526]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameControlsScreenVBoxContainer" type="VBoxContainer" parent="GameControlsScreenPanelContainer" unique_id=189832487]
+layout_mode = 2
+
+[node name="CurrentDateRichTextLabel" type="RichTextLabel" parent="GameControlsScreenPanelContainer/GameControlsScreenVBoxContainer" unique_id=597297861]
+layout_mode = 2
+text = "Date:
+1999/03/22"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameControlsScrollContainer" type="ScrollContainer" parent="GameControlsScreenPanelContainer/GameControlsScreenVBoxContainer" unique_id=1636006780]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GameControlsVBoxContainer" type="VBoxContainer" parent="GameControlsScreenPanelContainer/GameControlsScreenVBoxContainer/GameControlsScrollContainer" unique_id=1462682354]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NextWeekButton" type="Button" parent="GameControlsScreenPanelContainer/GameControlsScreenVBoxContainer/GameControlsScrollContainer/GameControlsVBoxContainer" unique_id=416406574]
+layout_mode = 2
+text = "Next Week"
+
+[node name="CompanyInformationButton" type="Button" parent="GameControlsScreenPanelContainer/GameControlsScreenVBoxContainer/GameControlsScrollContainer/GameControlsVBoxContainer" unique_id=1896232084]
+layout_mode = 2
+text = "Company
+Information"
+
+[node name="StoreListingsButton" type="Button" parent="GameControlsScreenPanelContainer/GameControlsScreenVBoxContainer/GameControlsScrollContainer/GameControlsVBoxContainer" unique_id=1377547384]
+layout_mode = 2
+text = "Store
+Listings"
+
+[connection signal="pressed" from="GameControlsScreenPanelContainer/GameControlsScreenVBoxContainer/GameControlsScrollContainer/GameControlsVBoxContainer/NextWeekButton" to="." method="_on_next_week_button_pressed"]
+[connection signal="pressed" from="GameControlsScreenPanelContainer/GameControlsScreenVBoxContainer/GameControlsScrollContainer/GameControlsVBoxContainer/CompanyInformationButton" to="." method="_on_company_information_button_pressed"]
+[connection signal="pressed" from="GameControlsScreenPanelContainer/GameControlsScreenVBoxContainer/GameControlsScrollContainer/GameControlsVBoxContainer/StoreListingsButton" to="." method="_on_store_listings_button_pressed"]

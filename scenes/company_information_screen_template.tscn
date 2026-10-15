@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://doaw4dlq8m3b1"]
+
+[ext_resource type="Script" uid="uid://belytuvnbhqx2" path="res://scripts/scenes/company_information_screen_template.gd" id="1_4qtv0"]
+
+[node name="CompanyInformationScreenControl" type="Control" unique_id=1065986403]
+custom_minimum_size = Vector2(330, 584)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 330.0
+offset_bottom = 584.0
+script = ExtResource("1_4qtv0")
+
+[node name="CompanyInformationScreenPanelContainer" type="PanelContainer" parent="." unique_id=1832234367]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CompanyInformationVBoxContainer" type="VBoxContainer" parent="CompanyInformationScreenPanelContainer" unique_id=1473168717]
+layout_mode = 2
+
+[node name="NameRichTextLabel" type="RichTextLabel" parent="CompanyInformationScreenPanelContainer/CompanyInformationVBoxContainer" unique_id=1310156289]
+layout_mode = 2
+text = "Company: [Company]
+CEO: [CEO]"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MoneyRichTextLabel" type="RichTextLabel" parent="CompanyInformationScreenPanelContainer/CompanyInformationVBoxContainer" unique_id=333049146]
+layout_mode = 2
+text = "Funds: $40,000.000
+Profit: $10,000.000"
+fit_content = true
+autowrap_mode = 0
+
+[node name="StoreCountRichTextLabel" type="RichTextLabel" parent="CompanyInformationScreenPanelContainer/CompanyInformationVBoxContainer" unique_id=1251014452]
+layout_mode = 2
+text = "Stores: 10"
+fit_content = true
+autowrap_mode = 0
