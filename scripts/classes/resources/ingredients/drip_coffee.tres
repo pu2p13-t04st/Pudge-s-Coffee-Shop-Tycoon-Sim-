@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://cg5jmcf4adm4p"]
+
+[ext_resource type="Script" uid="uid://b2k0tq8lpucvr" path="res://scripts/classes/scripts/ingredient_class.gd" id="1_cotpo"]
+
+[resource]
+script = ExtResource("1_cotpo")
+name = "Drip Coffee"
+cost_per_part = 0.5
+metadata/_custom_type_script = "uid://b2k0tq8lpucvr"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://ba6tmbatawwkc"]
+
+[ext_resource type="Script" uid="uid://b2k0tq8lpucvr" path="res://scripts/classes/scripts/ingredient_class.gd" id="1_v7341"]
+
+[resource]
+script = ExtResource("1_v7341")
+name = "Cream"
+cost_per_part = 0.5
+metadata/_custom_type_script = "uid://b2k0tq8lpucvr"

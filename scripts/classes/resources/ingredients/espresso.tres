@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://cp4nkpc1eey8"]
+
+[ext_resource type="Script" uid="uid://b2k0tq8lpucvr" path="res://scripts/classes/scripts/ingredient_class.gd" id="1_53t04"]
+
+[resource]
+script = ExtResource("1_53t04")
+name = "Espresso"
+cost_per_part = 0.75
+metadata/_custom_type_script = "uid://b2k0tq8lpucvr"
