@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dyd7pwfvbnwb8" path="res://player_action_screens/title_screen/title_screen.gd" id="1_u4gto"]
 
-[node name="TitleScreenControl" type="Control" unique_id=1978997060]
+[node name="TitleScreen" type="Control" unique_id=1978997060]
 custom_minimum_size = Vector2(1088, 584)
 layout_mode = 3
 anchors_preset = 0
@@ -10,7 +10,7 @@ offset_right = 1088.0
 offset_bottom = 584.0
 script = ExtResource("1_u4gto")
 
-[node name="TitleScreenBackgroundPanelContainer" type="PanelContainer" parent="." unique_id=446742356]
+[node name="TitleScreenBackground" type="PanelContainer" parent="." unique_id=446742356]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,15 +18,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TitleScreenVBoxContainer" type="VBoxContainer" parent="TitleScreenBackgroundPanelContainer" unique_id=991766297]
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleScreenBackground" unique_id=991766297]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TopTitleHSeparator" type="HSeparator" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer" unique_id=1475071276]
+[node name="LabelSeparatorTop" type="HSeparator" parent="TitleScreenBackground/VBoxContainer" unique_id=1475071276]
 layout_mode = 2
 
-[node name="TitleRichTextLabel" type="RichTextLabel" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer" unique_id=725564651]
+[node name="TitleLabel" type="RichTextLabel" parent="TitleScreenBackground/VBoxContainer" unique_id=725564651]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 64
@@ -36,14 +36,14 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BottomTitleHSeparator" type="HSeparator" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer" unique_id=323785722]
+[node name="LabelSeparatorBottom" type="HSeparator" parent="TitleScreenBackground/VBoxContainer" unique_id=323785722]
 layout_mode = 2
 
-[node name="CompanyNameHBoxContainer" type="HBoxContainer" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer" unique_id=166991277]
+[node name="CompanyNameContainer" type="HBoxContainer" parent="TitleScreenBackground/VBoxContainer" unique_id=166991277]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CompanyNameRichTextLabel" type="RichTextLabel" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer/CompanyNameHBoxContainer" unique_id=1657837494]
+[node name="CompanyLabel" type="RichTextLabel" parent="TitleScreenBackground/VBoxContainer/CompanyNameContainer" unique_id=1657837494]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 32
@@ -51,21 +51,21 @@ text = "Company Name:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="CompanyNameLineEdit" type="LineEdit" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer/CompanyNameHBoxContainer" unique_id=312047126]
+[node name="CompanyNameLineEdit" type="LineEdit" parent="TitleScreenBackground/VBoxContainer/CompanyNameContainer" unique_id=312047126]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "[Company]"
 
-[node name="HBoxHSeparator" type="HSeparator" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer" unique_id=135651183]
+[node name="ContainerSeparator" type="HSeparator" parent="TitleScreenBackground/VBoxContainer" unique_id=135651183]
 layout_mode = 2
 
-[node name="CEONameHBoxContainer" type="HBoxContainer" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer" unique_id=2068348642]
+[node name="CEONameContainer" type="HBoxContainer" parent="TitleScreenBackground/VBoxContainer" unique_id=2068348642]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CEONameRichTextLabel" type="RichTextLabel" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer/CEONameHBoxContainer" unique_id=162767869]
+[node name="CEONameLabel" type="RichTextLabel" parent="TitleScreenBackground/VBoxContainer/CEONameContainer" unique_id=162767869]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 32
@@ -73,17 +73,17 @@ text = "CEO Name:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="CEONameLineEdit" type="LineEdit" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer/CEONameHBoxContainer" unique_id=973816186]
+[node name="CEONameLineEdit" type="LineEdit" parent="TitleScreenBackground/VBoxContainer/CEONameContainer" unique_id=973816186]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "[CEO]"
 
-[node name="TopStartButtonHSeparator" type="HSeparator" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer" unique_id=128505683]
+[node name="ButtonSeparatorTop" type="HSeparator" parent="TitleScreenBackground/VBoxContainer" unique_id=128505683]
 layout_mode = 2
 
-[node name="StartButton" type="Button" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer" unique_id=1983077455]
+[node name="StartButton" type="Button" parent="TitleScreenBackground/VBoxContainer" unique_id=1983077455]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -91,7 +91,7 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 32
 text = "Start Game!"
 
-[node name="BottomStartButtonHSeparator" type="HSeparator" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer" unique_id=1600470254]
+[node name="ButtonSeparatorBottom" type="HSeparator" parent="TitleScreenBackground/VBoxContainer" unique_id=1600470254]
 layout_mode = 2
 
-[connection signal="pressed" from="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="TitleScreenBackground/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

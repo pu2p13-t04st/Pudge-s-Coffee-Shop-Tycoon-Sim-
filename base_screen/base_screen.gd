@@ -4,14 +4,14 @@ extends Node
 ## Loads Title Screen Exports Screen Sections
 
 
-# Scene Node Variables
+# Scene Variables
 @onready var title_screen_placeholder : Control = %TitleScreenPlaceholder
 @onready var screen_section_one : Control = %ScreenSectionOne
 @onready var screen_section_two : Control = %ScreenSectionTwo
-@onready var control_screen_placeholder : Control = %ControlScreenPlaceholder
+@onready var controls_screen_placeholder : Control = %ControlsScreenPlaceholder
 
-# Packed Scene Screen Variables
-@onready var title_screen : TitleScreen = preload("res://scenes/player_action_screens/title_screen/title_screen.tscn").instantiate()
+# Screen Variables
+@onready var title_screen : TitleScreen = preload("res://player_action_screens/title_screen/title_screen.tscn").instantiate()
 
 
 # Display Title Screen On Start

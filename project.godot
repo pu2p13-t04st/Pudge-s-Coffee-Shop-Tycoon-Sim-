@@ -17,9 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-NumberLogic="*uid://2u4kl3nolsqd"
+Numbers="*uid://2u4kl3nolsqd"
 Lists="*uid://8eraogo6i8vl"
-ProductAutoload="*uid://b40rg7tutee0e"
 
 [display]
 
@@ -28,8 +27,20 @@ window/stretch/mode="canvas_items"
 [file_customization]
 
 folder_colors={
-"res://data_containers/": "blue",
-"res://player_action_screens/": "red"
+"res://base_screen/": "gray",
+"res://data_containers/": "green",
+"res://data_containers/ceo_class/": "green",
+"res://data_containers/company_class/": "green",
+"res://data_containers/ingredient_class/": "green",
+"res://data_containers/manager_class/": "green",
+"res://data_containers/product_class/": "green",
+"res://data_containers/store_class/": "green",
+"res://global_scripts/": "blue",
+"res://player_action_screens/": "red",
+"res://player_action_screens/controls_screen/": "red",
+"res://player_action_screens/store_listings_screen/": "red",
+"res://player_action_screens/title_screen/": "red",
+"res://visuals/": "purple"
 }
 
 [gui]

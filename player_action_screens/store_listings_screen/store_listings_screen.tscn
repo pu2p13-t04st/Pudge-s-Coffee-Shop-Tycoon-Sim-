@@ -2,16 +2,15 @@
 
 [ext_resource type="Script" uid="uid://c03qfi5ftpnut" path="res://player_action_screens/store_listings_screen/store_listings_screen.gd" id="1_ibbk6"]
 
-[node name="AvailableStoresScreenControl" type="Control" unique_id=270070428 node_paths=PackedStringArray("store_listings_container")]
+[node name="StoreListingsScreen" type="Control" unique_id=270070428]
 custom_minimum_size = Vector2(528, 584)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 528.0
 offset_bottom = 584.0
 script = ExtResource("1_ibbk6")
-store_listings_container = NodePath("AvailableStoresScreenPanelContainer/AvailableStoresScreenVBoxContainer/StoreListingsScrollContainer/StoreListingsVBoxContainer")
 
-[node name="AvailableStoresScreenPanelContainer" type="PanelContainer" parent="." unique_id=1762926311]
+[node name="StoreListingsScreenBackground" type="PanelContainer" parent="." unique_id=1762926311]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,10 +18,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AvailableStoresScreenVBoxContainer" type="VBoxContainer" parent="AvailableStoresScreenPanelContainer" unique_id=1191573506]
+[node name="StoreListingsScreenContainer" type="VBoxContainer" parent="StoreListingsScreenBackground" unique_id=1191573506]
 layout_mode = 2
 
-[node name="AvailableStoresRichTextLabel" type="RichTextLabel" parent="AvailableStoresScreenPanelContainer/AvailableStoresScreenVBoxContainer" unique_id=762497072]
+[node name="AvailableStoresLabel" type="RichTextLabel" parent="StoreListingsScreenBackground/StoreListingsScreenContainer" unique_id=762497072]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 32
 text = "Available
@@ -32,14 +31,15 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StoreListingsHSeparator" type="HSeparator" parent="AvailableStoresScreenPanelContainer/AvailableStoresScreenVBoxContainer" unique_id=1227443053]
+[node name="StoreListingsSeparator" type="HSeparator" parent="StoreListingsScreenBackground/StoreListingsScreenContainer" unique_id=1227443053]
 layout_mode = 2
 
-[node name="StoreListingsScrollContainer" type="ScrollContainer" parent="AvailableStoresScreenPanelContainer/AvailableStoresScreenVBoxContainer" unique_id=1177730179]
+[node name="StoreListingsScrollContainer" type="ScrollContainer" parent="StoreListingsScreenBackground/StoreListingsScreenContainer" unique_id=1177730179]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="StoreListingsVBoxContainer" type="VBoxContainer" parent="AvailableStoresScreenPanelContainer/AvailableStoresScreenVBoxContainer/StoreListingsScrollContainer" unique_id=1920714655]
+[node name="StoreListingsContainer" type="VBoxContainer" parent="StoreListingsScreenBackground/StoreListingsScreenContainer/StoreListingsScrollContainer" unique_id=1920714655]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

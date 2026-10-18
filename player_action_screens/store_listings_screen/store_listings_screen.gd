@@ -1,3 +1,4 @@
+class_name StoreListingsScreen
 extends Control
 ## Handles how players buy stores
 ## Creates all available store resources in a game session
@@ -5,45 +6,49 @@ extends Control
 
 
 # Store Data Variables
-@export var unowned_stores : Array[Store]
-@export var store_types : Array[Store] = [
-	preload("res://scenes/information_screens/store_class/store_resources/city_center.tres"),
-	preload("res://scenes/information_screens/store_class/store_resources/second_block.tres"),
-	preload("res://scenes/information_screens/store_class/store_resources/third_block.tres"),
-	preload("res://scenes/information_screens/store_class/store_resources/fourth_block.tres"),
-	preload("res://scenes/information_screens/store_class/store_resources/suburbs.tres"),
-	preload("res://scenes/information_screens/store_class/store_resources/suburban_rural.tres"),
-	preload("res://scenes/information_screens/store_class/store_resources/rural.tres"),
-	preload("res://scenes/information_screens/store_class/store_resources/boons.tres"),
+@export var listed_stores : Array[StoreData]
+@export var unlisted_stores : Array[StoreData]
+@export var store_types : Array[StoreData] = [
+	preload("res://data_containers/store_class/resources/city_center.tres"),
+	preload("res://data_containers/store_class/resources/second_block.tres"),
+	preload("res://data_containers/store_class/resources/third_block.tres"),
+	preload("res://data_containers/store_class/resources/fourth_block.tres"),
+	preload("res://data_containers/store_class/resources/suburbs.tres"),
+	preload("res://data_containers/store_class/resources/suburban_rural.tres"),
+	preload("res://data_containers/store_class/resources/rural.tres"),
+	preload("res://data_containers/store_class/resources/boons.tres"),
 	]
 
 # Scene Variables
-@export var store_listings_container : VBoxContainer
+@onready var store_listings_container : VBoxContainer = %StoreListingsContainer
 
+# Out Of Scene Variables
+@onready var base_screen : BaseScreen = get_parent().get_parent()
+@onready var screen_section_one : Control = base_screen.screen_section_one
+@onready var screen_section_two : Control = base_screen.screen_section_two
+@onready var controls_screen_placeholder : Control = base_screen.controls_screen_placeholder
 
 # Screen Variables
-@onready var store_listing_template : PackedScene = preload("res://scenes/player_action_screens/available_stores_screen/available_stores_screen.tscn")
+@onready var listed_store_data_screen : PackedScene = preload("res://data_containers/store_class/data_screens/listed_store/listed_store_screen.tscn")
 
 
-# Placeholder Variables 
-var base : Node
-var screen_section_one : Control
-var screen_section_two : Control
-var control_screen_placeholder : Control
-var player_company_info : Control
-
-
-# Set Placeholder Variables
+# Create Store Resources 
+# Create Listing Screens For Them
+# Display Some In The Store Listings Container
+# Store Unlisted Stores In Unlisted Store Array
 func _ready() -> void:
-	screen_section_two = get_parent()
-	base = screen_section_two.base 
-	screen_section_one = base.screen_section_one
-	control_screen_placeholder = base.control_screen_placeholder
-	player_company_info = screen_section_one.get_child(0)
+	pass
 
 
-# Creates Store Resources
-func create_stores(store_amount : int):
-	for i in store_amount:
-		var new_store = store_listing_template.instantiate()
-		store_listings_container.add_child(new_store)
+# Makes Any Amount Of New Store Resources You Could w
+func create_store_data(number : int):
+	for i in number:
+		var new_store_data : StoreData
+		var random_type : int = randi_range(0, 7)
+		new_store_data = store_types.get(random_type)
+		new_store_data.set_variables()
+		unlisted_stores.append(new_store_data)
+
+func create_store_listing():
+	for store in unlisted_stores:
+		

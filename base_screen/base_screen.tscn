@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ce7utnpg3uw8q"]
 
-[ext_resource type="Script" uid="uid://cln0kgidjk5h1" path="res://base_screen/base.gd" id="1_xcgjc"]
+[ext_resource type="Script" uid="uid://cln0kgidjk5h1" path="res://base_screen/base_screen.gd" id="1_xcgjc"]
 
 [node name="BaseScreen" type="Node" unique_id=1845473916]
 script = ExtResource("1_xcgjc")
@@ -60,7 +60,7 @@ offset_bottom = 292.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ControlScreenPlaceholder" type="Control" parent="." unique_id=157483109]
+[node name="ControlsScreenPlaceholder" type="Control" parent="." unique_id=157483109]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(198, 584)
