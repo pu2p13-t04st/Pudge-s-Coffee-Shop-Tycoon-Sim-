@@ -6,14 +6,15 @@ extends Resource
 @export var name : String
 @export_enum("Hot", "Iced", "Frozen") var temp : String
 @export var ingredients : Array[Ingredient]
-@export var expenses : float 
-@export var sale_price : float 
+@export var expenses : float
+@export var sale_price : float
 @export var markup : float = 0.75
 
 
 func set_expenses():
 	for ingredient in ingredients:
 		expenses += ingredient.cost_per_part
+
 
 
 func set_sale_price():

@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://cpp3vo45u175j"]
 
-[ext_resource type="Script" uid="uid://c03qfi5ftpnut" path="res://scripts/scenes/available_stores_screen/available_stores_screen.gd" id="1_ibbk6"]
+[ext_resource type="Script" uid="uid://c03qfi5ftpnut" path="res://player_action_screens/store_listings_screen/store_listings_screen.gd" id="1_ibbk6"]
 
-[node name="AvailableStoresScreenControl" type="Control" unique_id=270070428]
+[node name="AvailableStoresScreenControl" type="Control" unique_id=270070428 node_paths=PackedStringArray("store_listings_container")]
 custom_minimum_size = Vector2(528, 584)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 528.0
 offset_bottom = 584.0
 script = ExtResource("1_ibbk6")
+store_listings_container = NodePath("AvailableStoresScreenPanelContainer/AvailableStoresScreenVBoxContainer/StoreListingsScrollContainer/StoreListingsVBoxContainer")
 
 [node name="AvailableStoresScreenPanelContainer" type="PanelContainer" parent="." unique_id=1762926311]
 layout_mode = 1

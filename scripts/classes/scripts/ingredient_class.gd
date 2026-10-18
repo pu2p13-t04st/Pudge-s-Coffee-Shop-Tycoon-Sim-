@@ -4,4 +4,4 @@ extends Resource
 
 
 @export var name : String
-@export var cost_per_part : float
+@export var cost_per_part : float = 0

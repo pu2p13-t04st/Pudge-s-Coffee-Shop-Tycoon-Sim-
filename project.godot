@@ -19,10 +19,18 @@ config/icon="res://icon.svg"
 
 NumberLogic="*uid://2u4kl3nolsqd"
 Lists="*uid://8eraogo6i8vl"
+ProductAutoload="*uid://b40rg7tutee0e"
 
 [display]
 
 window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://data_containers/": "blue",
+"res://player_action_screens/": "red"
+}
 
 [gui]
 

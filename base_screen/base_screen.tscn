@@ -1,15 +1,11 @@
 [gd_scene format=3 uid="uid://ce7utnpg3uw8q"]
 
-[ext_resource type="Script" uid="uid://cln0kgidjk5h1" path="res://scripts/scenes/base/base.gd" id="1_yoymw"]
+[ext_resource type="Script" uid="uid://cln0kgidjk5h1" path="res://base_screen/base.gd" id="1_xcgjc"]
 
-[node name="BaseNode" type="Node" unique_id=1845473916 node_paths=PackedStringArray("title_screen_placeholder", "screen_section_one", "screen_section_two", "screen_section_three")]
-script = ExtResource("1_yoymw")
-title_screen_placeholder = NodePath("TitleScreenPlaceholderControl")
-screen_section_one = NodePath("ScreenSectionOneControl")
-screen_section_two = NodePath("ScreenSectionTwoControl")
-screen_section_three = NodePath("ScreenSectionThreeControl")
+[node name="BaseScreen" type="Node" unique_id=1845473916]
+script = ExtResource("1_xcgjc")
 
-[node name="BackgroundPanelContainer" type="Panel" parent="." unique_id=45305283]
+[node name="Background" type="Panel" parent="." unique_id=45305283]
 z_index = -1
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,8 +13,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TitleScreenPlaceholderControl" type="Control" parent="." unique_id=1322362004]
-visible = false
+[node name="TitleScreenPlaceholder" type="Control" parent="." unique_id=1322362004]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(1088, 584)
 layout_mode = 3
 anchors_preset = 8
@@ -33,7 +29,8 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScreenSectionOneControl" type="Control" parent="." unique_id=1384105857]
+[node name="ScreenSectionOne" type="Control" parent="." unique_id=1384105857]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(330, 584)
 layout_mode = 3
@@ -46,7 +43,8 @@ offset_right = 362.0
 offset_bottom = 292.0
 grow_vertical = 2
 
-[node name="ScreenSectionTwoControl" type="Control" parent="." unique_id=578226902]
+[node name="ScreenSectionTwo" type="Control" parent="." unique_id=578226902]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(528, 584)
 layout_mode = 3
@@ -62,7 +60,8 @@ offset_bottom = 292.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScreenSectionThreeControl" type="Control" parent="." unique_id=157483109]
+[node name="ControlScreenPlaceholder" type="Control" parent="." unique_id=157483109]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(198, 584)
 layout_mode = 3

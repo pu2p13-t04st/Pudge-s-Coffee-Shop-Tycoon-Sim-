@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d0nsrhyv54ne6"]
 
-[ext_resource type="Script" uid="uid://dyd7pwfvbnwb8" path="res://scripts/scenes/title_screen/title_screen.gd" id="1_5df70"]
+[ext_resource type="Script" uid="uid://dyd7pwfvbnwb8" path="res://player_action_screens/title_screen/title_screen.gd" id="1_u4gto"]
 
 [node name="TitleScreenControl" type="Control" unique_id=1978997060]
 custom_minimum_size = Vector2(1088, 584)
@@ -8,7 +8,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1088.0
 offset_bottom = 584.0
-script = ExtResource("1_5df70")
+script = ExtResource("1_u4gto")
 
 [node name="TitleScreenBackgroundPanelContainer" type="PanelContainer" parent="." unique_id=446742356]
 layout_mode = 1
@@ -52,6 +52,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="CompanyNameLineEdit" type="LineEdit" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer/CompanyNameHBoxContainer" unique_id=312047126]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
@@ -73,6 +74,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="CEONameLineEdit" type="LineEdit" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer/CEONameHBoxContainer" unique_id=973816186]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
@@ -82,6 +84,7 @@ text = "[CEO]"
 layout_mode = 2
 
 [node name="StartButton" type="Button" parent="TitleScreenBackgroundPanelContainer/TitleScreenVBoxContainer" unique_id=1983077455]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
