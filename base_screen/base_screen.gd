@@ -1,20 +1,15 @@
 class_name BaseScreen
 extends Node
-## Base Scene Script
-## Loads Title Screen Exports Screen Sections
 
 
-# Scene Variables
-@onready var title_screen_placeholder : Control = %TitleScreenPlaceholder
-@onready var screen_section_one : Control = %ScreenSectionOne
-@onready var screen_section_two : Control = %ScreenSectionTwo
-@onready var controls_screen_placeholder : Control = %ControlsScreenPlaceholder
+@export var title_screen_section : TitleScreenSection
+@export var screen_section_one : ScreenSectionOne
+@export var screen_section_two : ScreenSectionTwo
+@export var controls_screen_section : ControlsScreenSection
 
-# Screen Variables
-@onready var title_screen : TitleScreen = preload("res://player_action_screens/title_screen/title_screen.tscn").instantiate()
+@export var player_company_data : CompanyData
+@export var player_ceo_data : CeoData
 
 
-# Display Title Screen On Start
-func _ready() -> void:
-	title_screen_placeholder.add_child(title_screen)
-	title_screen_placeholder.visible = true
+func _on_title_screen_section_child_exiting_tree(_node: Node) -> void:
+	controls_screen_section.add_controls_screen()

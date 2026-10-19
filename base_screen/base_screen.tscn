@@ -1,9 +1,17 @@
 [gd_scene format=3 uid="uid://ce7utnpg3uw8q"]
 
 [ext_resource type="Script" uid="uid://cln0kgidjk5h1" path="res://base_screen/base_screen.gd" id="1_xcgjc"]
+[ext_resource type="Script" uid="uid://blp7n55lmho03" path="res://base_screen/sub_scripts/screen_section_one.gd" id="2_6yhql"]
+[ext_resource type="Script" uid="uid://bsekg2ds4t7kb" path="res://base_screen/sub_scripts/title_screen_section.gd" id="2_7eb36"]
+[ext_resource type="Script" uid="uid://bu06tnu8lx5fy" path="res://base_screen/sub_scripts/screen_section_two.gd" id="3_v82cb"]
+[ext_resource type="Script" uid="uid://cyj40fr63fow7" path="res://base_screen/sub_scripts/controls_screen_section.gd" id="4_ifk8w"]
 
-[node name="BaseScreen" type="Node" unique_id=1845473916]
+[node name="BaseScreen" type="Node" unique_id=1845473916 node_paths=PackedStringArray("title_screen_section", "screen_section_one", "screen_section_two", "controls_screen_section")]
 script = ExtResource("1_xcgjc")
+title_screen_section = NodePath("TitleScreenSection")
+screen_section_one = NodePath("ScreenSectionOne")
+screen_section_two = NodePath("ScreenSectionTwo")
+controls_screen_section = NodePath("ControlsScreenSection")
 
 [node name="Background" type="Panel" parent="." unique_id=45305283]
 z_index = -1
@@ -13,8 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TitleScreenPlaceholder" type="Control" parent="." unique_id=1322362004]
-unique_name_in_owner = true
+[node name="TitleScreenSection" type="Control" parent="." unique_id=1322362004 node_paths=PackedStringArray("base_screen", "screen_section_one", "controls_screen_section")]
 custom_minimum_size = Vector2(1088, 584)
 layout_mode = 3
 anchors_preset = 8
@@ -28,9 +35,12 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_7eb36")
+base_screen = NodePath("..")
+screen_section_one = NodePath("../ScreenSectionOne")
+controls_screen_section = NodePath("../ControlsScreenSection")
 
 [node name="ScreenSectionOne" type="Control" parent="." unique_id=1384105857]
-unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(330, 584)
 layout_mode = 3
@@ -42,9 +52,9 @@ offset_top = -292.0
 offset_right = 362.0
 offset_bottom = 292.0
 grow_vertical = 2
+script = ExtResource("2_6yhql")
 
 [node name="ScreenSectionTwo" type="Control" parent="." unique_id=578226902]
-unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(528, 584)
 layout_mode = 3
@@ -59,9 +69,9 @@ offset_right = 330.0
 offset_bottom = 292.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_v82cb")
 
-[node name="ControlsScreenPlaceholder" type="Control" parent="." unique_id=157483109]
-unique_name_in_owner = true
+[node name="ControlsScreenSection" type="Control" parent="." unique_id=157483109 node_paths=PackedStringArray("base_screen")]
 visible = false
 custom_minimum_size = Vector2(198, 584)
 layout_mode = 3
@@ -76,3 +86,7 @@ offset_right = -32.0
 offset_bottom = 292.0
 grow_horizontal = 0
 grow_vertical = 2
+script = ExtResource("4_ifk8w")
+base_screen = NodePath("..")
+
+[connection signal="child_exiting_tree" from="TitleScreenSection" to="." method="_on_title_screen_section_child_exiting_tree"]
